@@ -1,0 +1,59 @@
+"""
+Error Code Lookup
+
+Author: client Options Trading Engine
+"""
+
+ERROR_CODES = {
+    # Broker
+    1001: "CONNECTION_FAILED",
+    1002: "CONNECTION_TIMEOUT",
+    1003: "DISCONNECTED",
+    1004: "AUTH_FAILED",
+
+    # Data
+    2001: "MARKET_DATA_ERROR",
+    2002: "NO_MARKET_DATA",
+    2003: "OPTION_CHAIN_ERROR",
+    2004: "NO_OPTION_FOUND",
+    2005: "STALE_DATA",
+    2010: "IV_DATA_ERROR",
+
+    # Strategy
+    3001: "STRATEGY_NOT_FOUND",
+    3002: "STRATEGY_BUILD_ERROR",
+    3003: "LEG_BUILD_ERROR",
+    3004: "NO_STRATEGY_MATCH",
+    3005: "INVALID_STRATEGY_CONFIG",
+
+    # Execution
+    4001: "ORDER_SUBMIT_ERROR",
+    4002: "ORDER_REJECTED",
+    4003: "ORDER_TIMEOUT",
+    4004: "PARTIAL_FILL",
+    4005: "SPREAD_EXECUTION_ERROR",
+    4006: "ORDER_CANCEL_ERROR",
+
+    # Position/Risk
+    5001: "NO_POSITION",
+    5002: "POSITION_EXISTS",
+    5003: "RISK_LIMIT_EXCEEDED",
+    5004: "INSUFFICIENT_CAPITAL",
+    5005: "INVALID_POSITION_SIZE",
+
+    # Config
+    6001: "CONFIG_FILE_NOT_FOUND",
+    6002: "CONFIG_PARSE_ERROR",
+    6003: "CONFIG_VALIDATION_ERROR",
+    6004: "MISSING_CONFIG",
+
+    # System
+    9001: "CRITICAL_ERROR",
+    9002: "EMERGENCY_SHUTDOWN",
+    9003: "STATE_ERROR",
+}
+
+
+def get_error_name(code: int) -> str:
+    """Get error name from code"""
+    return ERROR_CODES.get(code, f"UNKNOWN_ERROR_{code}")

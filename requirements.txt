@@ -1,0 +1,36 @@
+# client Options Trading Engine Requirements
+
+# IBKR API - Install manually from IB website or use:
+# pip install ibapi (older PyPI version)
+# For latest: download from https://interactivebrokers.github.io/
+# ibapi>=10.19.1  # Comment out - not on PyPI
+
+# ib_insync - Modern async wrapper for IBKR API
+ib_insync>=0.9.86
+
+# Data handling
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Date/Time utilities
+python-dateutil>=2.8.2
+pytz>=2023.3
+tzdata>=2023.3  # Required for zoneinfo on Windows
+
+# Configuration
+# (Uses built-in csv module)
+
+# Logging
+# (Uses built-in logging module)
+
+# Threading
+# (Uses built-in threading module)
+
+# Optional: For testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Optional: For development
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0

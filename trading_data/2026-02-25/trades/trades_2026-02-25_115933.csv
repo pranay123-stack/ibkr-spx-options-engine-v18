@@ -1,0 +1,2 @@
+trade_date,entry_time,exit_time,position_id,strategy,direction,expiry,legs,contracts,entry_spread,exit_spread,target,stop,exit_reason,pnl,duration_min,spx_entry,spx_exit
+2026-02-25,11:44:57,12:00:02,POS_20260225_0001,STRAT_DEBIT_CALL,BULLISH,20260225,C6935B|C6960S,2,7.14,-7.5,3.57,10.71,TARGET,-2928.0,15,6936.17,6937.13

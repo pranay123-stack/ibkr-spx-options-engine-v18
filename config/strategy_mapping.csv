@@ -1,0 +1,51 @@
+direction,vol_regime,trend_regime,custom_flag_1,strategy_id
+# ==================== BULLISH Direction ====================
+# Low Vol (vol_1) - Use debit spreads
+BULLISH,vol_1,UPTREND,ANY,STRAT_DEBIT_CALL
+BULLISH,vol_1,DOWNTREND,ANY,NO_TRADE
+BULLISH,vol_1,SIDEWAYS,ANY,STRAT_DEBIT_CALL
+
+# Mid Vol (vol_2) - Use credit spreads
+BULLISH,vol_2,UPTREND,ANY,STRAT_CREDIT_PUT
+BULLISH,vol_2,DOWNTREND,ANY,NO_TRADE
+BULLISH,vol_2,SIDEWAYS,ANY,STRAT_CREDIT_PUT
+
+# High Vol (vol_3) - Credit spreads work well
+BULLISH,vol_3,UPTREND,ANY,STRAT_CREDIT_PUT
+BULLISH,vol_3,DOWNTREND,ANY,NO_TRADE
+BULLISH,vol_3,SIDEWAYS,ANY,STRAT_CREDIT_PUT
+
+# ==================== BEARISH Direction ====================
+# Low Vol (vol_1) - Use debit spreads
+BEARISH,vol_1,DOWNTREND,ANY,STRAT_DEBIT_PUT
+BEARISH,vol_1,UPTREND,ANY,NO_TRADE
+BEARISH,vol_1,SIDEWAYS,ANY,STRAT_DEBIT_PUT
+
+# Mid Vol (vol_2) - Use credit spreads
+BEARISH,vol_2,DOWNTREND,ANY,STRAT_CREDIT_CALL
+BEARISH,vol_2,UPTREND,ANY,NO_TRADE
+BEARISH,vol_2,SIDEWAYS,ANY,STRAT_CREDIT_CALL
+
+# High Vol (vol_3) - Credit spreads work well
+BEARISH,vol_3,DOWNTREND,ANY,STRAT_CREDIT_CALL
+BEARISH,vol_3,UPTREND,ANY,NO_TRADE
+BEARISH,vol_3,SIDEWAYS,ANY,STRAT_CREDIT_CALL
+
+# ==================== NEUTRAL Direction ====================
+# Low Vol (vol_1) - Long vol strategies
+NEUTRAL,vol_1,UPTREND,ANY,STRAT_LONG_STRANGLE
+NEUTRAL,vol_1,DOWNTREND,ANY,STRAT_LONG_STRANGLE
+NEUTRAL,vol_1,SIDEWAYS,ANY,STRAT_LONG_STRANGLE
+
+# Mid Vol (vol_2) - Iron Condor
+NEUTRAL,vol_2,UPTREND,ANY,STRAT_IRON_CONDOR
+NEUTRAL,vol_2,DOWNTREND,ANY,STRAT_IRON_CONDOR
+NEUTRAL,vol_2,SIDEWAYS,ANY,STRAT_IRON_CONDOR
+
+# High Vol (vol_3) - Iron Fly for max premium
+NEUTRAL,vol_3,UPTREND,ANY,STRAT_IRON_FLY
+NEUTRAL,vol_3,DOWNTREND,ANY,STRAT_IRON_FLY
+NEUTRAL,vol_3,SIDEWAYS,ANY,STRAT_IRON_FLY
+
+# ==================== Catch-All Rules ====================
+ANY,ANY,ANY,ANY,NO_TRADE

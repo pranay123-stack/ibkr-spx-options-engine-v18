@@ -1,0 +1,2 @@
+timestamp,spx_price,orb_high,orb_low,breakout,direction,ivp,trend,strategy,legs,entry_spread,signal_ok,executed,reason
+2026-02-19 14:39:09,6842.11,6875.99,6842.82,6842.78,BEARISH,95.2,DOWNTREND,STRAT_CREDIT_CALL,C6845S|C6870B,-5.2,YES,NO,Strategy built with strikes

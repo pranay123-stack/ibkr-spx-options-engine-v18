@@ -1,0 +1,2 @@
+timestamp,spx_price,orb_high,orb_low,breakout,direction,ivp,trend,strategy,legs,entry_spread,signal_ok,executed,reason
+2026-02-25 12:05:53,6938.56,6936.2,6915.15,6938.32,BULLISH,0.0,UPTREND,STRAT_DEBIT_CALL,C6940B|C6965S,5.39,YES,NO,Strategy built with strikes

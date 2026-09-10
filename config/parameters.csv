@@ -1,0 +1,133 @@
+parameter_name,value
+# ==================== Symbol Settings ====================
+underlying_symbol,SPX
+underlying_exchange,CBOE
+underlying_sec_type,IND
+underlying_currency,USD
+
+# ==================== Session Times (IST for US Market) ====================
+# US 9:30 AM ET = 8:00 PM IST (7:00 PM IST during DST)
+# US 4:00 PM ET = 2:30 AM IST next day (1:30 AM IST during DST)
+session_start_time,20:00
+session_end_time,01:30
+# Cutoff - force close positions X minutes before session_end (5 min = 3:55 PM ET)
+cutoff_time_minutes,5
+exit_on_time,YES
+# Entry cutoff - block new entries X minutes before session_end (30 min = 3:30 PM ET)
+entry_cutoff_time_minutes,30
+bar_interval_minutes,5
+
+# ==================== ORB Settings (IST) ====================
+# ORB window: 30 minutes from market open (20:00 - 20:30 IST)
+use_orb,YES
+orb_window_minutes,30
+orb_start_time,20:00
+orb_breakout_start_time,20:30
+orb_breakout_end_time,02:30
+
+# ==================== Trend Filter Settings ====================
+use_trend_filter,YES
+ma_short_length,50
+ma_long_length,100
+trend_mode,confirm_with_trend
+
+# ==================== Direction Source ====================
+direction_source,orb_only
+
+# ==================== Volatility Settings ====================
+use_ivp,YES
+ivp_window_days,252
+ivp_1_threshold,40
+ivp_2_threshold,60
+# US 10:05 AM = 20:35 IST
+iv_reference_times,20:35
+atm_strike_rounding_step,5
+iv_smoothing_method,average
+
+# ==================== Options Settings ====================
+option_entry_price_field,mid
+use_broker_iv,YES
+use_broker_delta,YES
+# Trading class for options (SPXW for SPX weeklies, NDXP for NDX, etc.)
+underlying_trading_class,SPXW
+# Live market session - Jan 23 (IST 8:00 PM = US market open 9:30 AM ET)
+default_expiry_rule,same_day
+
+# ==================== Strike Search Settings ====================
+strike_step,5
+max_strike_range_points,50
+strike_search_expand_step_points,10
+# Max spread width for vertical spreads (in strike points, e.g., 25 = $25 wide)
+max_spread_width_points,25
+
+# ==================== Entry Settings ====================
+entry_time_mode,on_signal_close_plus_offset
+entry_offset_minutes,2
+slippage_per_leg,0.50
+
+# ==================== Order Execution Settings ====================
+# Price chasing: automatically update limit price to improve fill probability
+enable_price_chasing,YES
+chase_interval_seconds,3.0
+max_chase_time_seconds,86400.0
+# Max % price change per chase attempt (prevents IBKR rejection)
+max_price_deviation_pct,3.0
+
+# Exit order type: LIMIT (with chasing) or MARKET (with retry)
+# LIMIT = better price, uses chasing like entry
+# MARKET = guaranteed fill, retries until filled
+exit_order_type,MARKET
+# For MARKET exits: retry interval in seconds
+market_exit_retry_interval,5.0
+
+# ==================== Risk Settings ====================
+credit_target_factor,0.30
+credit_stop_factor,0.30
+debit_target_factor,1.50
+debit_stop_factor,0.50
+min_risk_reward_ratio,0.15
+
+# ==================== Monitoring Settings ====================
+monitor_interval_minutes,5
+exit_on_target,YES
+exit_on_stop,YES
+
+# ==================== Position Sizing ====================
+max_cap_to_be_used,100000
+risk_per_trade,5000
+contract_size,100
+max_contracts,10
+
+# ==================== IBKR Settings ====================
+ibkr_host,127.0.0.1
+ibkr_port,7497
+ibkr_client_id,8
+# IBKR bar timestamp offset: hours to add to convert bar time to ET
+# Set to 1 if TWS is in Central Time (CT), 0 if TWS is in Eastern Time (ET)
+ibkr_bar_timezone_offset_hours,1
+
+# ==================== Logging Settings ====================
+log_dir,logs
+log_level,INFO
+log_trades,YES
+log_signals,YES
+
+# ==================== Execution Mode ====================
+# Signal-only mode: generate signals without placing orders on IBKR
+signal_only_mode,NO
+# Require fresh data for signals (set to NO for testing with stale data)
+require_fresh_data_for_signals,YES
+# Auto-recover positions: if YES, engine will auto-recover existing TWS positions on startup
+# If NO (default), existing positions are treated as MANUAL and engine won't interfere
+auto_recover_positions,YES
+
+# ==================== Bracket Order Settings ====================
+# Use bracket orders: IBKR handles SL + Target exits automatically
+# When YES, places reversed combo exit orders (Target + SL) linked by OCA
+# IBKR monitors and executes exits - no software monitoring needed
+use_bracket_orders,YES
+# Stop-limit offset: $ amount added to SL trigger price for the limit price
+# Wider offset = more likely to fill but worse price; narrower = better price but may not fill
+# IBKR constraint: Limit price must be close to Stop price (not too far through)
+# Reduced from 1.50 to 0.50 due to IBKR rejection error
+sl_limit_offset,0.50

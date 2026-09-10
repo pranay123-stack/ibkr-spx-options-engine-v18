@@ -1,0 +1,52 @@
+strategy_id,leg,type,side,delta,expiry,qty
+# ==================== Credit Put Spread (Bull Put) ====================
+STRAT_CREDIT_PUT,1,P,SELL,0.40,,1
+STRAT_CREDIT_PUT,2,P,BUY,0.25,,1
+
+# ==================== Credit Call Spread (Bear Call) ====================
+STRAT_CREDIT_CALL,1,C,SELL,0.40,,1
+STRAT_CREDIT_CALL,2,C,BUY,0.25,,1
+
+# ==================== Debit Call Spread (Bull Call) ====================
+STRAT_DEBIT_CALL,1,C,BUY,0.50,,1
+STRAT_DEBIT_CALL,2,C,SELL,0.25,,1
+
+# ==================== Debit Put Spread (Bear Put) ====================
+STRAT_DEBIT_PUT,1,P,BUY,0.50,,1
+STRAT_DEBIT_PUT,2,P,SELL,0.25,,1
+
+# ==================== Iron Condor ====================
+STRAT_IRON_CONDOR,1,P,BUY,0.10,,1
+STRAT_IRON_CONDOR,2,P,SELL,0.25,,1
+STRAT_IRON_CONDOR,3,C,SELL,0.25,,1
+STRAT_IRON_CONDOR,4,C,BUY,0.10,,1
+
+# ==================== Iron Fly ====================
+STRAT_IRON_FLY,1,P,BUY,0.10,,1
+STRAT_IRON_FLY,2,P,SELL,0.50,,1
+STRAT_IRON_FLY,3,C,SELL,0.50,,1
+STRAT_IRON_FLY,4,C,BUY,0.10,,1
+
+# ==================== Long Straddle ====================
+STRAT_LONG_STRADDLE,1,P,BUY,0.50,,1
+STRAT_LONG_STRADDLE,2,C,BUY,0.50,,1
+
+# ==================== Short Straddle ====================
+STRAT_SHORT_STRADDLE,1,P,SELL,0.50,,1
+STRAT_SHORT_STRADDLE,2,C,SELL,0.50,,1
+
+# ==================== Long Strangle ====================
+STRAT_LONG_STRANGLE,1,P,BUY,0.25,,1
+STRAT_LONG_STRANGLE,2,C,BUY,0.25,,1
+
+# ==================== Short Strangle ====================
+STRAT_SHORT_STRANGLE,1,P,SELL,0.25,,1
+STRAT_SHORT_STRANGLE,2,C,SELL,0.25,,1
+
+# ==================== Call Ratio Spread (1x2) ====================
+STRAT_RATIO_CALL,1,C,BUY,0.50,,1
+STRAT_RATIO_CALL,2,C,SELL,0.25,,2
+
+# ==================== Put Ratio Spread (1x2) ====================
+STRAT_RATIO_PUT,1,P,BUY,0.50,,1
+STRAT_RATIO_PUT,2,P,SELL,0.25,,2

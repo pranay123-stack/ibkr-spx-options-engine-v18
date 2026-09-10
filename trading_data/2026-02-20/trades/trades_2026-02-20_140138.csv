@@ -1,0 +1,2 @@
+trade_date,entry_time,exit_time,position_id,strategy,direction,expiry,legs,contracts,entry_spread,exit_spread,target,stop,exit_reason,pnl,duration_min,spx_entry,spx_exit
+2026-02-20,14:02:45,14:06:12,POS_20260220_0001,STRAT_CREDIT_PUT,BULLISH,20260220,P6910S|P6885B,2,-4.3,-7.1,-2.15,-6.45,STOP,-560.0,3,6912.98,6909.28

@@ -1,0 +1,2 @@
+timestamp,spx_price,orb_high,orb_low,breakout,direction,ivp,trend,strategy,legs,entry_spread,signal_ok,executed,reason
+2026-02-20 12:47:44,6878.67,6869.98,6836.33,6879.76,BULLISH,97.2,UPTREND,STRAT_CREDIT_PUT,P6880S|P6855B,-7.3,YES,NO,Strategy built with strikes

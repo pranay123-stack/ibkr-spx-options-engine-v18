@@ -1,0 +1,2 @@
+trade_date,entry_time,exit_time,position_id,strategy,direction,expiry,legs,contracts,entry_spread,exit_spread,target,stop,exit_reason,pnl,duration_min,spx_entry,spx_exit
+2026-02-23,12:48:02,12:54:10,POS_20260223_0001,STRAT_CREDIT_CALL,BEARISH,20260223,C6830S|C6855B,2,-7.17,-12.4,-3.59,-10.76,STOP,-1045.0,6,6827.76,6836.19
